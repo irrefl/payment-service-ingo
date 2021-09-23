@@ -1,0 +1,26 @@
+docker rmi 5e67290d9825 --force
+docker build -t gol .
+docker run -d -p 3333:3000 shopping-service
+
+
+apiVersion:apps/v1
+kind:Deployment
+metadata:
+    name:go-shopping-service
+spec:
+    replicas
+
+
+
+
+
+  ---
+  spec:
+    type: nodePort
+    ports:
+        - name:http
+          port:9090
+          targetPort:3000
+    selector:
+        app:shopping-service
+
