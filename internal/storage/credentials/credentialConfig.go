@@ -76,21 +76,3 @@ func (j *UserCredentialBuilder) GetConnectionString() *UserCredentialBuilder {
 func (b *CredentialBuilder) Build() *CredentialConfig {
 	return b.credential
 }
-
-//RunBuilderFacet example
-func RunBuilderFacet() {
-
-	pb := NewCredentialBuilder()
-	pb.ServerInfo().
-		WithServerName("localhost").
-		WithPortNumber(1433).
-		WithDbName("goTest").
-		UserAuthInfo().
-		WithUserName("sa").
-		WithPassword("$prod1234").
-		GetConnectionString()
-
-	person := pb.Build()
-
-	fmt.Println(person)
-}

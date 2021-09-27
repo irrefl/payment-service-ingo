@@ -15,7 +15,6 @@ type EmployeeRepository struct {
 
 func NewEmployeeRepository(database sqlserver.IDatabase) *EmployeeRepository {
 	return &EmployeeRepository{
-
 		db: database,
 	}
 }
@@ -88,7 +87,7 @@ func (sq *EmployeeRepository) ReadEmployees() ([]employees.Employee, error) {
 		var name, location string
 		var id int
 
-		// Get values from row.
+		// GetUrl values from row.
 		err := rows.Scan(&id, &name, &location)
 		if err != nil {
 			return _employs, err
